@@ -1,0 +1,38 @@
+<head>
+  <title>chat</title>
+</head>
+
+<body>
+  {{> main}}
+</body>
+
+<template name="main">
+  <h1>chat</h1>
+   {{> form}}
+   {{> remove}}
+   <hr />
+   {{#each strike}}
+     {{> result}}
+   {{/each}}
+</template>
+
+<template name="form">
+   <form>
+     名前:<input type="text" id="name" /><br />
+     内容:<textarea id="content"></textarea><br />
+     <input type="button" value="post" />
+   </form>
+</template>
+
+<template name="remove">
+   <input type="button" value="all remove" />
+</template>
+
+<template name="result">
+  <div class="result">
+    名前:{{name}}<br />
+    内容:{{content}}<br/>
+    {{time}}<br />
+	<hr />
+  </div>
+</template>
